@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llUberLocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:background="@color/colorPrimaryDark"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.gwr.uberinfo.UberLocationActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.gwr.gpsgwr.MainActivity" />
+
+    <LinearLayout
+        android:id="@+id/llFormularioBusca"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/oval_rect_shape2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llToolbar"
+        android:layout_alignStart="@+id/llToolbar">
+
+       <EditText
+           android:id="@+id/edtInicioRua"
+        android:hint="Inicio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/edtFimRua"
+            android:hint="Fim"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnCalcularRota"
+            android:layout_gravity="right"
+            android:text="Calcular"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llToolbar"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/oval_rect_shape2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:src="@drawable/local_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:transitionName="element1"/>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/colorButtonText"
+            android:text="Encontre seu Uber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:transitionName="element2"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/ivFormDown"
+            android:elevation="5dp"
+            android:src="@drawable/form_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fbUber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map"
+        android:layout_alignRight="@+id/map"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_car_black_48dp"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fbPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_cash_usd_black_48dp"
+        android:layout_above="@+id/fbUber"
+        android:layout_alignStart="@+id/fbUber" />
+
+
+
+</RelativeLayout>
